@@ -93,7 +93,8 @@
       <a href="index.html">Home</a><br>
       <a href="donate.html">Donate &amp; Volunteer</a><br>
       <a href="nominate.html">Nominate a Veteran</a><br>
-      <a href="about.html">About &amp; Contact</a>
+      <a href="about.html">About &amp; Contact</a><br>
+      <a href="share.html" style="font-size:12px;color:#9a9a9d;">Received a coin? Share your story</a>
     </div>
     <div>
       <h4>Contact</h4>
@@ -109,4 +110,18 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="js/supabase-config.js"></script>
-<script src="js/main.js"></
+<script src="js/main.js"></script>
+<script>
+  wireSupabaseForm(document.getElementById("share-form"), "veteran_feedback", function (data) {
+    return {
+      reason: data.get("reason"),
+      message: data.get("message") || null,
+      name: data.get("name") || null,
+      email: data.get("email") || null,
+      phone: data.get("phone") || null,
+      consent_to_share: data.get("consent_to_share") === "on"
+    };
+  });
+</script>
+</body>
+</html>
