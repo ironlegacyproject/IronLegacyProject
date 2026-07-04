@@ -1,0 +1,105 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <radialGradient id="bezelGrad" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#8a9298"/>
+      <stop offset="45%" stop-color="#565d63"/>
+      <stop offset="100%" stop-color="#23272b"/>
+    </radialGradient>
+    <linearGradient id="rustRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d18a4a"/>
+      <stop offset="50%" stop-color="#9c5a24"/>
+      <stop offset="100%" stop-color="#6e3c14"/>
+    </linearGradient>
+    <radialGradient id="faceGrad" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#2f3033"/>
+      <stop offset="70%" stop-color="#1c1c1e"/>
+      <stop offset="100%" stop-color="#101011"/>
+    </radialGradient>
+    <linearGradient id="ironGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfe3e6"/>
+      <stop offset="50%" stop-color="#9aa2a8"/>
+      <stop offset="100%" stop-color="#5b6268"/>
+    </linearGradient>
+
+    <path id="topArc" d="M 108,300 A 192,192 0 0 1 492,300" fill="none"/>
+    <path id="bottomArc" d="M 175,449 A 195,195 0 0 0 425,449" fill="none"/>
+  </defs>
+
+  <!-- Outer bezel -->
+  <circle cx="300" cy="300" r="288" fill="url(#bezelGrad)"/>
+
+  <!-- Rivets around bezel -->
+  <g fill="#3d4348" stroke="#171a1c" stroke-width="1.5">
+    <circle cx="300" cy="26" r="8"/>
+    <circle cx="463" cy="70" r="8"/>
+    <circle cx="565" cy="192" r="8"/>
+    <circle cx="574" cy="300" r="8"/>
+    <circle cx="565" cy="408" r="8"/>
+    <circle cx="463" cy="530" r="8"/>
+    <circle cx="300" cy="574" r="8"/>
+    <circle cx="137" cy="530" r="8"/>
+    <circle cx="35" cy="408" r="8"/>
+    <circle cx="26" cy="300" r="8"/>
+    <circle cx="35" cy="192" r="8"/>
+    <circle cx="137" cy="70" r="8"/>
+  </g>
+
+  <!-- Rust accent ring -->
+  <circle cx="300" cy="300" r="258" fill="url(#rustRing)"/>
+
+  <!-- Face -->
+  <circle cx="300" cy="300" r="240" fill="url(#faceGrad)"/>
+  <circle cx="300" cy="300" r="240" fill="none" stroke="#c97c3d" stroke-width="2" opacity="0.5"/>
+
+  <!-- Top curved title -->
+  <text font-size="34" font-weight="800" letter-spacing="4" fill="#e9ebec">
+    <textPath xlink:href="#topArc" href="#topArc" startOffset="50%" text-anchor="middle">IRON LEGACY PROJECT</textPath>
+  </text>
+
+  <!-- small stars flanking top text -->
+  <g fill="#c97c3d">
+    <path d="M 118,275 l4,10 10,1 -7.5,7 2.3,10 -8.8,-5.6 -8.8,5.6 2.3,-10 -7.5,-7 10,-1 z"/>
+    <path d="M 482,275 l4,10 10,1 -7.5,7 2.3,10 -8.8,-5.6 -8.8,5.6 2.3,-10 -7.5,-7 10,-1 z"/>
+  </g>
+
+  <!-- Center emblem: crossed iron bars (iron sharpens iron) -->
+  <g transform="translate(300,278)">
+    <circle r="118" fill="none" stroke="#c97c3d" stroke-width="2" opacity="0.4"/>
+
+    <!-- Bar 1 ("/" diagonal), absolute local polygon points, pre-computed for a 45deg rotation -->
+    <polygon points="57.28,-77.07 77.07,-57.28 -57.28,77.07 -77.07,57.28" fill="url(#ironGrad)" stroke="#202325" stroke-width="2"/>
+    <!-- Bar 2 ("\" diagonal), -45deg rotation -->
+    <polygon points="-77.07,-57.28 -57.28,-77.07 77.07,57.28 57.28,77.07" fill="url(#ironGrad)" stroke="#202325" stroke-width="2"/>
+
+    <!-- grip bands near each of the four tips -->
+    <g fill="#3a3f44">
+      <polygon points="63.5,-84.5 71,-77 77.5,-83.5 70,-91"/>
+      <polygon points="-63.5,84.5 -71,77 -77.5,83.5 -70,91"/>
+      <polygon points="-84.5,-63.5 -77,-71 -83.5,-77.5 -91,-70"/>
+      <polygon points="84.5,63.5 77,71 83.5,77.5 91,70"/>
+    </g>
+
+    <!-- spark burst at intersection -->
+    <g fill="#e8b45a">
+      <path d="M0,-34 L8,-6 L34,0 L8,6 L0,34 L-8,6 L-34,0 L-8,-6 Z"/>
+      <path d="M0,-22 L5,-4 L22,0 L5,4 L0,22 L-5,4 L-22,0 L-5,-4 Z" fill="#fff4d6"/>
+    </g>
+  </g>
+
+  <!-- Three words banner -->
+  <g font-size="20" font-weight="700" letter-spacing="1.5" fill="#e9ebec" text-anchor="middle">
+    <text x="165" y="430">HONOR</text>
+    <text x="300" y="430">SHARPEN</text>
+    <text x="435" y="430">REMIND</text>
+  </g>
+  <g fill="#c97c3d">
+    <circle cx="228" cy="425" r="3.5"/>
+    <circle cx="370" cy="425" r="3.5"/>
+  </g>
+
+  <!-- Bottom curved verse -->
+  <text font-size="22" font-weight="700" letter-spacing="2" fill="#c97c3d">
+    <textPath xlink:href="#bottomArc" href="#bottomArc" startOffset="50%" text-anchor="middle">PROVERBS 27:17</textPath>
+  </text>
+
+</svg>
