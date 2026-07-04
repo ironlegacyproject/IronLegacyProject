@@ -75,8 +75,7 @@
       time.
     </p>
     <ul class="contact-list">
-      <li><strong>Email:</strong> <a href="mailto:ironlegacyproject@tutamail.com">ironlegacyproject@tutamail.com</a></li>
-      <li><strong>Phone:</strong> <a href="tel:2084322372">208-432-2372</a></li>
+      <li><strong>Email:</strong> <a href="mailto:support@ironlegacyproject.com">support@ironlegacyproject.com</a></li>
       <li><strong>Location:</strong> Idaho, USA</li>
     </ul>
     <div class="hero-ctas" style="justify-content:flex-start;margin-top:26px;">
@@ -84,6 +83,34 @@
       <a class="btn btn-dark" href="donate.html#volunteer">Volunteer</a>
       <a class="btn btn-dark" href="nominate.html">Nominate a Veteran</a>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Send Us a Message</h2>
+    <p class="section-intro">
+      Have a question or just want to say hello? Send us a message below and it'll come straight to our inbox.
+    </p>
+
+    <form class="stack" id="contact-form">
+      <div class="form-row">
+        <label for="c-name">Your Name</label>
+        <input type="text" id="c-name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="c-email">Your Email</label>
+        <input type="email" id="c-email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="c-message">Message</label>
+        <textarea id="c-message" name="message" required></textarea>
+      </div>
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <div id="form-status"></div>
+    </form>
   </div>
 </section>
 
@@ -99,8 +126,7 @@
     </div>
     <div>
       <h4>Contact</h4>
-      <a href="mailto:ironlegacyproject@tutamail.com">ironlegacyproject@tutamail.com</a><br>
-      <a href="tel:2084322372">208-432-2372</a><br>
+      <a href="mailto:support@ironlegacyproject.com">support@ironlegacyproject.com</a><br>
       Idaho, USA
     </div>
   </div>
@@ -110,5 +136,8 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  wireContactForm(document.getElementById("contact-form"));
+</script>
 </body>
 </html>
