@@ -18,6 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
       a.classList.add("active");
     }
   });
+
+  // If the contact form fell back to a plain (non-JS) submission, FormSubmit
+  // redirects back here with ?sent=true — show the confirmation message.
+  if (window.location.search.indexOf("sent=true") !== -1) {
+    var contactForm = document.getElementById("contact-form");
+    var contactStatus = contactForm ? contactForm.querySelector("#form-status") : document.getElementById("form-status");
+    if (contactStatus) {
+      contactStatus.textContent = "Thank you — your message has been sent.";
+      contactStatus.className = "ok";
+    }
+  }
 });
 
 // ---- Supabase client (lazy init) ----

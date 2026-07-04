@@ -93,7 +93,7 @@
       Have a question or just want to say hello? Send us a message below and it'll come straight to our inbox.
     </p>
 
-    <form class="stack" id="contact-form">
+    <form class="stack" id="contact-form" method="POST" action="https://formsubmit.co/support@ironlegacyproject.com">
       <div class="form-row">
         <label for="c-name">Your Name</label>
         <input type="text" id="c-name" name="name" required>
@@ -107,6 +107,10 @@
         <textarea id="c-message" name="message" required></textarea>
       </div>
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="New message from ironlegacyproject.com contact form">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://ironlegacyproject.com/about.html?sent=true#contact-form">
+      <input type="hidden" name="_captcha" value="false">
 
       <button type="submit" class="btn btn-primary">Send Message</button>
       <div id="form-status"></div>
