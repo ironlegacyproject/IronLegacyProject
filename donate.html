@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate &amp; Volunteer | Iron Legacy Project</title>
+<meta name="description" content="Donate to Iron Legacy Project or volunteer your time to help veterans facing hard seasons.">
+<link rel="icon" href="assets/logo-dots.png" type="image/png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-dots.png" alt="Iron Legacy Project logo">
+      <span class="brand-text">IRON LEGACY PROJECT<small>HONOR. REMIND. SHARPEN.</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="donate.html">Donate &amp; Volunteer</a>
+      <a href="nominate.html">Nominate a Veteran</a>
+      <a href="about.html">About &amp; Contact</a>
+      <a href="donate.html#donate" class="nav-cta">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <h1>Donate &amp; Volunteer</h1>
+  <p>Any gift, at any amount, helps us reach another veteran. Any time you can give helps us reach more of them.</p>
+</section>
+
+<section id="donate">
+  <div class="container">
+    <h2 class="section-title">Donate</h2>
+    <div class="form-note">
+      A gift of any amount helps cover the cost of a care package &mdash; the coin, the letter of
+      encouragement, and shipping &mdash; delivered directly to a veteran in need. Iron Legacy Project is
+      currently completing its 501(c)(3) nonprofit application in Idaho; tax-deductible status is pending
+      IRS approval.
+    </div>
+    <div class="cta-grid">
+      <div class="cta-card">
+        <h3>Give Online</h3>
+        <p>
+          <!-- Replace this button's href with your donation processor link (e.g. Givebutter, PayPal
+               Giving Fund, or Stripe Payment Link) once your 501(c)(3) and payment account are set up. -->
+        </p>
+        <a class="btn btn-primary btn-block" href="mailto:ironlegacyproject@tutamail.com?subject=Donation%20Inquiry">
+          Donate Now
+        </a>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px;">
+          Online giving is being set up. For now this button opens an email to arrange your gift directly.
+        </p>
+      </div>
+      <div class="cta-card">
+        <h3>Mail a Check</h3>
+        <p>Prefer to mail a donation? Contact us for mailing details, or reach out with any questions
+          about giving.</p>
+        <a class="btn btn-dark btn-block" href="mailto:ironlegacyproject@tutamail.com?subject=Mailing%20a%20Donation">
+          Email Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="volunteer">
+  <div class="container">
+    <h2 class="section-title">Volunteer</h2>
+    <p class="section-intro">
+      We're always looking for volunteers to write letters, assemble care packages, and help connect us
+      with veterans in the community. No special experience is required, just a willingness to serve.
+      Consistent with our Bylaws, every volunteer completes a short interview and is approved by a
+      majority vote of the officers before beginning any volunteer role, particularly given the sensitive
+      population we serve.
+    </p>
+
+    <form class="stack" id="volunteer-form">
+      <div class="form-row">
+        <label for="v-name">Full Name</label>
+        <input type="text" id="v-name" name="full_name" required>
+      </div>
+      <div class="form-row">
+        <label for="v-email">Email</label>
+        <input type="email" id="v-email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="v-phone">Phone Number <span class="hint">(optional)</span></label>
+        <input type="tel" id="v-phone" name="phone">
+      </div>
+      <div class="form-row">
+        <label for="v-interest">How would you like to help?</label>
+        <select id="v-interest" name="interest">
+          <option value="Writing letters of encouragement">Writing letters of encouragement</option>
+          <option value="Assembling care packages">Assembling care packages</option>
+          <option value="Identifying / connecting with veterans">Identifying or connecting with veterans in the community</option>
+          <option value="Chaplain / spiritual support">Chaplain / spiritual support</option>
+          <option value="Event help (fellowship dinners, etc.)">Event help (fellowship dinners, etc.)</option>
+          <option value="Not sure yet">Not sure yet &mdash; just want to help</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="v-notes">Anything else you'd like us to know? <span class="hint">(optional)</span></label>
+        <textarea id="v-notes" name="notes"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Volunteer Interest</button>
+      <div id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <h4>IRON LEGACY PROJECT</h4>
+      <a href="index.html">Home</a><br>
+      <a href="donate.html">Donate &amp; Volunteer</a><br>
+      <a href="nominate.html">Nominate a Veteran</a><br>
+      <a href="about.html">About &amp; Contact</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:ironlegacyproject@tutamail.com">ironlegacyproject@tutamail.com</a><br>
+      <a href="tel:2084322372">208-432-2372</a><br>
+      Idaho, USA
+    </div>
+  </div>
+  <div class="container disclaimer">
+    Iron Legacy Project is currently completing its 501(c)(3) nonprofit application in Idaho. Tax-deductible status is pending IRS approval.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/main.js"></script>
+<script>
+  wireSupabaseForm(document.getElementById("volunteer-form"), "volunteer_signups", function (data) {
+    return {
+      full_name: data.get("full_name"),
+      email: data.get("email"),
+      phone: data.get("phone") || null,
+      interest: data.get("interest"),
+      notes: data.get("notes") || null
+    };
+  });
+</script>
+</body>
+</html>
