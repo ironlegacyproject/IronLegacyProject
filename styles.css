@@ -28,6 +28,17 @@ img{max-width:100%;display:block;}
 
 .container{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
 
+/* Notice banner */
+.notice-banner{
+  background:#fbf3e8;
+  color:#5a4a33;
+  text-align:center;
+  font-size:13px;
+  line-height:1.4;
+  padding:10px 20px;
+  border-bottom:1px solid #eadcc4;
+}
+
 /* Header */
 header.site-header{
   background:var(--dark);
@@ -124,6 +135,19 @@ nav.main-nav a:hover,nav.main-nav a.active{
 }
 .hero img.hero-logo{width:auto;height:320px;flex:0 0 auto;margin:0;}
 .hero-text{flex:1 1 auto;text-align:left;}
+.hero-badge{
+  display:inline-block;
+  color:var(--spark);
+  background:rgba(255,255,255,0.08);
+  border:1px solid var(--rust-light);
+  border-radius:20px;
+  padding:6px 16px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
 .hero h1{
   font-size:34px;
   margin:0 0 8px;
